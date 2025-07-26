@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -11,8 +10,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === "production" ? "/voice-accounting-app" : "",
-  basePath: process.env.NODE_ENV === "production" ? "/voice-accounting-app" : "",
+  // 在Vercel上部署时不需要这些设置
+  // assetPrefix: process.env.NODE_ENV === "production" ? "/voice-accounting-app" : "",
+  // basePath: process.env.NODE_ENV === "production" ? "/voice-accounting-app" : "",
 }
 
 module.exports = nextConfig
